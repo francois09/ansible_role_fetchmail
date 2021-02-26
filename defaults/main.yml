@@ -1,0 +1,6 @@
+---
+# defaults file for fetchmail
+fetchmail__install: False
+fetchmail__configure: False
+fetchmail__fetchlist: []
+...

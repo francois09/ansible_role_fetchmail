@@ -1,0 +1,18 @@
+---
+# Install the package
+- name: Install package
+  apt:
+    name: fetchmail
+    update_cache: yes
+    state: present
+  when:
+    - fetchmail__install
+
+# Create config file
+- name: Create global config file
+  template:
+    src: fetchmail_rc
+    dest: /etc/fetchmailrc
+  when:
+    - fetchmail__configure
+...

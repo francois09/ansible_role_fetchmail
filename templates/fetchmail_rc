@@ -1,0 +1,3 @@
+{% for e in fetchmail__fetchlist %}
+poll {{ e.server }} proto {{ e.protocol }} user "{{ e.user }}" is {{ e.local_user }} here pass {{ e.password }} ssl sslfingerprint "{{ e.ssl_fingerprint}}"{% if e.expunge is defined %}expunge {{ e.expunge }}{% endif %}
+{% endfor %}
