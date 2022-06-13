@@ -15,4 +15,13 @@
     dest: /etc/fetchmailrc
   when:
     - fetchmail__configure
+
+- name: Update /etc/default/fetchmail
+  lineinfile:
+    regexp: "^START_DAEMON=.*"
+    line: "START_DAEMON=yes"
+    path: /etc/default/fetchmail
+  when:
+    - fetchmail__configure
+  notify: Reload fetchmail
 ...
