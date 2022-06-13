@@ -1,0 +1,6 @@
+---
+# handlers file for fetchmail
+- name: Reload fetchmail
+  systemd:
+    name: fetchmail
+    state: reloaded
