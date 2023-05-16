@@ -23,5 +23,5 @@
     path: /etc/default/fetchmail
   when:
     - fetchmail__configure
-  notify: Reload fetchmail
+  notify: Restart fetchmail
 ...
